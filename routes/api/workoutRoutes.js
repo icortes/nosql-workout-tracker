@@ -17,6 +17,19 @@ router.put('/:id', async (req, res) => {
   }
 });
 
+router.get('/', (req, res) => {
+  Workout.find({})
+    .sort({date: -1})
+    .limit(1)
+    .populate('exercise')
+    .then((dbWorkout) => {
+      res.status(200).json(dbWorkout);
+    })
+    .catch((error) => {
+      res.status(400).json(error);
+    });
+});
+
 router.post('/', (req, res) => {
   const date = Date.now();
   Workout.create({date})
