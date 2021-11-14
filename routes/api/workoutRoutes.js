@@ -18,14 +18,16 @@ router.put('/:id', async (req, res) => {
 });
 
 router.get('/', (req, res) => {
-  Workout.find({})
-    .sort({date: -1})
+  Workout.findOne({})
+    .sort({day: -1})
     .limit(1)
-    .populate('exercise')
+    .populate('exercises')
     .then((dbWorkout) => {
+      console.log(dbWorkout);
       res.status(200).json(dbWorkout);
     })
     .catch((error) => {
+      console.log(error);
       res.status(400).json(error);
     });
 });
@@ -40,4 +42,15 @@ router.post('/', (req, res) => {
       res.status(400).json(error);
     });
 });
+
+router.get('/range', async (req, res) => {
+ try {
+   const workouts = await Workout.find({}).populate('exercises');
+   res.status(200).json(workouts);
+ } catch (error) {
+   console.log(error);
+   res.status(400).json(error);
+ }
+});
+
 module.exports = router;
