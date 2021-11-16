@@ -32,4 +32,4 @@ This project is licensed under the MIT License
 
 ## Acknowledgments
 
-*[Matt Stephens](https://github.com/mstephen19) for helping me debug my code
+* [Matt Stephens](https://github.com/mstephen19) for helping me debug my code
