@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const { Schema } = mongoose;
+const {Schema} = mongoose;
 
 const WorkoutSchema = new Schema({
   exercises: [
@@ -8,10 +8,12 @@ const WorkoutSchema = new Schema({
       ref: 'Exercise',
     },
   ],
-  duration: Number,
   day: {
     type: Date,
     default: Date.now,
+  },
+  totalDuration: {
+    type: Number,
   },
 });
 
