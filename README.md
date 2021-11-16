@@ -2,7 +2,7 @@
 
 In this website you are able to view, create, and track your daily workouts. You are able to log multiple exercises in a workout on a given day. You are also be able to track the name, type, weight, sets, reps, and duration of exercise. If the exercise is a cardio exercise, you are able to track the distance traveled.
 
-![image of website]()
+![image of website](/assets/img/screenshot.jpg)
 ## Getting Started
 ### Prerequisites
 
